@@ -5,7 +5,7 @@ import RxCocoa
 import RxRelay
 
 final class GitHubSearchNetworkService {
-    private let provider = MoyaProvider<GitHubSearchType>()
+    private let provider = MoyaProvider<GitHubSearchType>(plugins: [NetworkLoggerPlugin()])
 
     func getUserData(by name: String) -> Single<GitHubUsersResponse> {
         provider.rx.request(.user(name: name))

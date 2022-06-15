@@ -10,7 +10,6 @@
 		6C93C87F2848A0D300792302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C93C87E2848A0D300792302 /* AppDelegate.swift */; };
 		6C93C8882848A0D600792302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C93C8872848A0D600792302 /* Assets.xcassets */; };
 		6C93C88B2848A0D600792302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C93C8892848A0D600792302 /* LaunchScreen.storyboard */; };
-		6C93C8962848A0D600792302 /* github_searchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C93C8952848A0D600792302 /* github_searchTests.swift */; };
 		6C93C8A02848A0D600792302 /* github_searchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C93C89F2848A0D600792302 /* github_searchUITests.swift */; };
 		6C93C8A22848A0D600792302 /* github_searchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C93C8A12848A0D600792302 /* github_searchUITestsLaunchTests.swift */; };
 		6C93C8B52848A3C700792302 /* UIView+AddShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C93C8B22848A3C700792302 /* UIView+AddShadow.swift */; };
@@ -27,6 +26,9 @@
 		6CB145D1284E25DA000CE621 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB145D0284E25DA000CE621 /* SearchCoordinator.swift */; };
 		6CC5C60B284F4C3400AAC5FA /* SearchCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC5C60A284F4C3400AAC5FA /* SearchCellView.swift */; };
 		6CC5C60D284F4CE800AAC5FA /* SearchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC5C60C284F4CE800AAC5FA /* SearchCellViewModel.swift */; };
+		6CCF5DB72858F30300ACB009 /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF5DB62858F30300ACB009 /* SearchViewModelTest.swift */; };
+		6CCF5DB92859A0BD00ACB009 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF5DB82859A0BD00ACB009 /* UIViewController+Alerts.swift */; };
+		6CCF5DBB2859C83600ACB009 /* Observable+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF5DBA2859C83600ACB009 /* Observable+Errors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +55,6 @@
 		6C93C88A2848A0D600792302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C93C88C2848A0D600792302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C93C8912848A0D600792302 /* github-searchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "github-searchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C93C8952848A0D600792302 /* github_searchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_searchTests.swift; sourceTree = "<group>"; };
 		6C93C89B2848A0D600792302 /* github-searchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "github-searchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C93C89F2848A0D600792302 /* github_searchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_searchUITests.swift; sourceTree = "<group>"; };
 		6C93C8A12848A0D600792302 /* github_searchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_searchUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -71,6 +72,9 @@
 		6CB145D0284E25DA000CE621 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		6CC5C60A284F4C3400AAC5FA /* SearchCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellView.swift; sourceTree = "<group>"; };
 		6CC5C60C284F4CE800AAC5FA /* SearchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellViewModel.swift; sourceTree = "<group>"; };
+		6CCF5DB62858F30300ACB009 /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTest.swift; sourceTree = "<group>"; };
+		6CCF5DB82859A0BD00ACB009 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		6CCF5DBA2859C83600ACB009 /* Observable+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Errors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +135,7 @@
 		6C93C8942848A0D600792302 /* github-searchTests */ = {
 			isa = PBXGroup;
 			children = (
-				6C93C8952848A0D600792302 /* github_searchTests.swift */,
+				6CCF5DB52858F2D400ACB009 /* SearchTest */,
 			);
 			path = "github-searchTests";
 			sourceTree = "<group>";
@@ -179,8 +183,10 @@
 		6C93C8B12848A3C700792302 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6CCF5DB82859A0BD00ACB009 /* UIViewController+Alerts.swift */,
 				6C93C8B22848A3C700792302 /* UIView+AddShadow.swift */,
 				6C93C8B32848A3C700792302 /* UIView+RoundedCorners.swift */,
+				6CCF5DBA2859C83600ACB009 /* Observable+Errors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -279,6 +285,14 @@
 				6CC5C60C284F4CE800AAC5FA /* SearchCellViewModel.swift */,
 			);
 			path = SearchCell;
+			sourceTree = "<group>";
+		};
+		6CCF5DB52858F2D400ACB009 /* SearchTest */ = {
+			isa = PBXGroup;
+			children = (
+				6CCF5DB62858F30300ACB009 /* SearchViewModelTest.swift */,
+			);
+			path = SearchTest;
 			sourceTree = "<group>";
 		};
 		C47270D43C751B3EB5F5A6F5 /* Pods */ = {
@@ -422,6 +436,7 @@
 				6C93C8C12848A3DB00792302 /* MainCoordinator.swift in Sources */,
 				6C93C8D92848A4B200792302 /* GitHubSearchNetworkService.swift in Sources */,
 				6C93C8CE2848A3E900792302 /* DI.swift in Sources */,
+				6CCF5DBB2859C83600ACB009 /* Observable+Errors.swift in Sources */,
 				6C93C8BC2848A3D100792302 /* ReuseIdentifiable.swift in Sources */,
 				6CC5C60D284F4CE800AAC5FA /* SearchCellViewModel.swift in Sources */,
 				6C93C8B62848A3C700792302 /* UIView+RoundedCorners.swift in Sources */,
@@ -429,6 +444,7 @@
 				6C93C8DC2848A99400792302 /* GitHubUserResponse.swift in Sources */,
 				6CB145CF284E2481000CE621 /* SearchViewController.swift in Sources */,
 				6C93C8CF2848A3E900792302 /* URLFactory.swift in Sources */,
+				6CCF5DB92859A0BD00ACB009 /* UIViewController+Alerts.swift in Sources */,
 				6C93C8B52848A3C700792302 /* UIView+AddShadow.swift in Sources */,
 				6C93C87F2848A0D300792302 /* AppDelegate.swift in Sources */,
 				6CB145D1284E25DA000CE621 /* SearchCoordinator.swift in Sources */,
@@ -440,7 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C93C8962848A0D600792302 /* github_searchTests.swift in Sources */,
+				6CCF5DB72858F30300ACB009 /* SearchViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,7 @@
 import UIKit
 import RxSwift
 import RxDataSources
+import RxSwiftExt
 
 final class SearchViewController: UIViewController {
     private let viewModel: SearchViewModel
@@ -29,6 +30,7 @@ final class SearchViewController: UIViewController {
     private func bind(to viewModel: SearchViewModel) {
         searchController.searchBar.rx.text
             .distinctUntilChanged()
+            .debounce(.seconds(1), scheduler: MainScheduler.instance)
             .bind(to: viewModel.search)
             .disposed(by: disposeBag)
 
@@ -41,6 +43,10 @@ final class SearchViewController: UIViewController {
                 cell.configure(with: viewModel)
             }
             .disposed(by: disposeBag)
+
+        viewModel.error.bind { [unowned self] error in
+            self.showErrorMessage()
+        }.disposed(by: disposeBag)
     }
 
     private func setup() {
@@ -66,5 +72,9 @@ final class SearchViewController: UIViewController {
         searchController.searchBar.sizeToFit()
         tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
+    }
+
+    private func showErrorMessage() {
+        showAlert(withMessage: "There is some server error occurred.")
     }
 }

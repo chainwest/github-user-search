@@ -1,10 +1,3 @@
-//
-//  github_searchUITests.swift
-//  github-searchUITests
-//
-//  Created by Евгений Урбановский on 02.06.2022.
-//
-
 import XCTest
 
 class github_searchUITests: XCTestCase {
