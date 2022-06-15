@@ -1,7 +1,6 @@
 import UIKit
 import RxSwift
 import RxDataSources
-import RxSwiftExt
 
 final class SearchViewController: UIViewController {
     private let viewModel: SearchViewModel
@@ -11,6 +10,10 @@ final class SearchViewController: UIViewController {
 
     private lazy var showError = Binder<Error>(rx.base) { view, error in
         self.showAlert(withMessage: error.localizedDescription)
+    }
+
+    private lazy var deselectCell = Binder<IndexPath>(rx.base) { view, indexPath in
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
 
     private let disposeBag = DisposeBag()
@@ -33,6 +36,7 @@ final class SearchViewController: UIViewController {
 
     private func bind(to viewModel: SearchViewModel) {
         searchController.searchBar.rx.text
+            .orEmpty
             .distinctUntilChanged()
             .debounce(.seconds(1), scheduler: MainScheduler.instance)
             .bind(to: viewModel.search)
@@ -60,7 +64,11 @@ final class SearchViewController: UIViewController {
 
     private func setupTableView() {
         view.addSubview(tableView)
+        let backView = UIView()
+        backView.backgroundColor = .white
+        tableView.backgroundView = backView
         tableView.register(SearchCellView.self, forCellReuseIdentifier: SearchCellView.reuseIdentifier)
+        tableView.rx.itemSelected.bind(to: deselectCell).disposed(by: disposeBag)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
