@@ -29,7 +29,6 @@
 		6CC5C60B284F4C3400AAC5FA /* SearchCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC5C60A284F4C3400AAC5FA /* SearchCellView.swift */; };
 		6CC5C60D284F4CE800AAC5FA /* SearchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC5C60C284F4CE800AAC5FA /* SearchCellViewModel.swift */; };
 		6CCF5DB92859A0BD00ACB009 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF5DB82859A0BD00ACB009 /* UIViewController+Alerts.swift */; };
-		6CCF5DBB2859C83600ACB009 /* Observable+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF5DBA2859C83600ACB009 /* Observable+Errors.swift */; };
 		6CCF5DBD285A02A300ACB009 /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF5DBC285A02A300ACB009 /* NetworkServiceMock.swift */; };
 		A56285D844785611F6DE05DF /* Pods_github_search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB3195A99D8B84E679F9563 /* Pods_github_search.framework */; };
 /* End PBXBuildFile section */
@@ -80,7 +79,6 @@
 		6CC5C60A284F4C3400AAC5FA /* SearchCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellView.swift; sourceTree = "<group>"; };
 		6CC5C60C284F4CE800AAC5FA /* SearchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellViewModel.swift; sourceTree = "<group>"; };
 		6CCF5DB82859A0BD00ACB009 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
-		6CCF5DBA2859C83600ACB009 /* Observable+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Errors.swift"; sourceTree = "<group>"; };
 		6CCF5DBC285A02A300ACB009 /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
 		792B015A9B1DC868A1220B6E /* Pods-github-searchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-searchTests.release.xcconfig"; path = "Target Support Files/Pods-github-searchTests/Pods-github-searchTests.release.xcconfig"; sourceTree = "<group>"; };
 		A98566FB01FC336EDE703552 /* Pods-github-search.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-search.release.xcconfig"; path = "Target Support Files/Pods-github-search/Pods-github-search.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 				6CCF5DB82859A0BD00ACB009 /* UIViewController+Alerts.swift */,
 				6C93C8B22848A3C700792302 /* UIView+AddShadow.swift */,
 				6C93C8B32848A3C700792302 /* UIView+RoundedCorners.swift */,
-				6CCF5DBA2859C83600ACB009 /* Observable+Errors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -593,7 +590,6 @@
 				6CC5C60B284F4C3400AAC5FA /* SearchCellView.swift in Sources */,
 				6C93C8C12848A3DB00792302 /* MainCoordinator.swift in Sources */,
 				6C93C8D92848A4B200792302 /* GitHubSearchNetworkService.swift in Sources */,
-				6CCF5DBB2859C83600ACB009 /* Observable+Errors.swift in Sources */,
 				6C93C8BC2848A3D100792302 /* ReuseIdentifiable.swift in Sources */,
 				6CC5C60D284F4CE800AAC5FA /* SearchCellViewModel.swift in Sources */,
 				6C93C8B62848A3C700792302 /* UIView+RoundedCorners.swift in Sources */,
