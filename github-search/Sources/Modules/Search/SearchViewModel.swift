@@ -3,18 +3,18 @@ import RxCocoa
 import RxSwiftExt
 
 final class SearchViewModel {
-    private let dependencies: DI
+    private let networkService: GitHubSearchNetworkServiceProtocol
 
     let search = PublishRelay<String?>()
     let dataSource: Driver<[SearchCellViewModel]>
-    let error: Observable<Error>
+    let error: Driver<String>
 
-    init(dependencies: DI) {
-        self.dependencies = dependencies
+    init(networkService: GitHubSearchNetworkServiceProtocol) {
+        self.networkService = networkService
 
         let events = search.compactMap { $0 }
             .flatMapLatest {
-                dependencies.networkService.getUserData(by: $0)
+                networkService.getUserData(by: $0)
                     .asObservable()
                     .materialize()
             }.share()
@@ -30,6 +30,9 @@ final class SearchViewModel {
             }
             .asDriver(onErrorDriveWith: .never())
 
-        error = events.errors()
+        error = events
+            .errors()
+            .map { $0.localizedDescription }
+            .asDriver(onErrorDriveWith: .never())
     }
 }

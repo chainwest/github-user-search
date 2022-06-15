@@ -4,7 +4,11 @@ import RxSwift
 import RxCocoa
 import RxRelay
 
-final class GitHubSearchNetworkService {
+protocol GitHubSearchNetworkServiceProtocol: AnyObject {
+    func getUserData(by name: String) -> Single<GitHubUsersResponse>
+}
+
+final class GitHubSearchNetworkService: GitHubSearchNetworkServiceProtocol {
     private let provider = MoyaProvider<GitHubSearchType>(plugins: [NetworkLoggerPlugin()])
 
     func getUserData(by name: String) -> Single<GitHubUsersResponse> {

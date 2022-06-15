@@ -21,9 +21,9 @@ pod 'RxSwift'
 pod 'RxCocoa'
 pod 'RxDataSources'
 pod 'RxSwiftExt'
+pod 'RxBlocking'
 pod 'Moya/RxSwift'
 pod 'Moya'
-pod 'Kingfisher'
 
 end
 

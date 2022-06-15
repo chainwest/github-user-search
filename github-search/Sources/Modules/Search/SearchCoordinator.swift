@@ -2,18 +2,18 @@ import UIKit
 
 final class SearchCoordinator: Coordinator {
     var navigationController: UINavigationController
-    var dependencies: DI
+    let networkService: GitHubSearchNetworkServiceProtocol
 
     init(
         navigationController: UINavigationController,
-        dependencies: DI
+        networkService: GitHubSearchNetworkServiceProtocol
     ) {
         self.navigationController = navigationController
-        self.dependencies = dependencies
+        self.networkService = networkService
     }
 
     func start() {
-        let viewModel = SearchViewModel(dependencies: dependencies)
+        let viewModel = SearchViewModel(networkService: networkService)
         let vc = SearchViewController(viewModel: viewModel)
         navigationController.setViewControllers([vc], animated: false)
     }

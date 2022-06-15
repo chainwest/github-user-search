@@ -3,7 +3,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private lazy var mainCoordinator = createMainCoordinator()
-    private lazy var dependencies = DI.makeDefaultAssembly()
+    private lazy var networkService: GitHubSearchNetworkServiceProtocol = GitHubSearchNetworkService()
 
     var window: UIWindow?
 
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return MainCoordinator(
             window: window,
             navigationController: navigationController,
-            dependencies: dependencies
+            networkService: networkService
         )
     }
 

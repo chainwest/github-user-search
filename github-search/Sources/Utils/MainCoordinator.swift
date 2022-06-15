@@ -2,25 +2,26 @@ import UIKit
 
 protocol Coordinator: AnyObject {
     var navigationController: UINavigationController { get set }
-    var dependencies: DI { get set }
 
     func start()
 }
 
 final class MainCoordinator: Coordinator {
     private var window: UIWindow?
-    var childCoordinators = [Coordinator]()
+    private var childCoordinators = [Coordinator]()
+
+    private let networkService: GitHubSearchNetworkServiceProtocol
+
     var navigationController: UINavigationController
-    var dependencies: DI
 
     init(
         window: UIWindow?,
         navigationController: UINavigationController,
-        dependencies: DI
+        networkService: GitHubSearchNetworkServiceProtocol
     ) {
         self.window = window
         self.navigationController = navigationController
-        self.dependencies = dependencies
+        self.networkService = networkService
         setupNavigationController()
     }
 
@@ -33,7 +34,10 @@ final class MainCoordinator: Coordinator {
 
     func start() {
         guard let window = window else { return }
-        let coordinator = SearchCoordinator(navigationController: navigationController, dependencies: dependencies)
+        let coordinator = SearchCoordinator(
+            navigationController: navigationController,
+            networkService: networkService
+        )
         
         childCoordinators.append(coordinator)
         coordinator.start()

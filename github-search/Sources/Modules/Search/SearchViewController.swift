@@ -8,12 +8,12 @@ final class SearchViewController: UIViewController {
     private let searchController = UISearchController()
     private let tableView = UITableView()
 
-    private lazy var showError = Binder<Error>(rx.base) { view, error in
-        self.showAlert(withMessage: error.localizedDescription)
+    private lazy var showError = Binder<String>(rx.base) { view, error in
+        view.showAlert(withMessage: error)
     }
 
     private lazy var deselectCell = Binder<IndexPath>(rx.base) { view, indexPath in
-        self.tableView.deselectRow(at: indexPath, animated: true)
+        view.tableView.deselectRow(at: indexPath, animated: true)
     }
 
     private let disposeBag = DisposeBag()
@@ -35,9 +35,11 @@ final class SearchViewController: UIViewController {
     }
 
     private func bind(to viewModel: SearchViewModel) {
-        searchController.searchBar.rx.text
-            .orEmpty
-            .distinctUntilChanged()
+        searchController.searchBar.rx
+            .searchButtonClicked
+            .withLatestFrom(
+                searchController.searchBar.rx.text.orEmpty.distinctUntilChanged()
+            )
             .debounce(.seconds(1), scheduler: MainScheduler.instance)
             .bind(to: viewModel.search)
             .disposed(by: disposeBag)
@@ -52,7 +54,10 @@ final class SearchViewController: UIViewController {
             }
             .disposed(by: disposeBag)
 
-        viewModel.error.bind(to: showError).disposed(by: disposeBag)
+        viewModel.error
+            .asObservable()
+            .bind(to: showError)
+            .disposed(by: disposeBag)
     }
 
     private func setup() {
