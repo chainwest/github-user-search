@@ -9,6 +9,10 @@ final class SearchViewController: UIViewController {
     private let searchController = UISearchController()
     private let tableView = UITableView()
 
+    private lazy var showError = Binder<Error>(rx.base) { view, error in
+        self.showAlert(withMessage: error.localizedDescription)
+    }
+
     private let disposeBag = DisposeBag()
 
     init(viewModel: SearchViewModel) {
@@ -44,9 +48,7 @@ final class SearchViewController: UIViewController {
             }
             .disposed(by: disposeBag)
 
-        viewModel.error.bind { [unowned self] error in
-            self.showErrorMessage()
-        }.disposed(by: disposeBag)
+        viewModel.error.bind(to: showError).disposed(by: disposeBag)
     }
 
     private func setup() {
@@ -72,9 +74,5 @@ final class SearchViewController: UIViewController {
         searchController.searchBar.sizeToFit()
         tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
-    }
-
-    private func showErrorMessage() {
-        showAlert(withMessage: "There is some server error occurred.")
     }
 }
